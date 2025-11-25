@@ -118,7 +118,7 @@ RCT_EXPORT_METHOD(open:(NSString *)path invocation:(nonnull NSNumber *)invocatio
     controller.delegate = self;
 
     typeof(self) __weak weakSelf = self;
-    [[RNFileViewer topViewController] presentViewController:controller animated:YES completion:^{
+    [[RNFileViewer topViewController] presentViewController:controller animated:NO completion:^{
         [weakSelf sendEventWithName:OPEN_EVENT body: @{@"id": invocationId}];
     }];
 }
